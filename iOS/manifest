@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: Titanium mobile zip file utility
+author: Benjamin Bahrenburg
+license: Apache 2
+copyright: Copyright (c) 2013 by Benjamin Bahrenburg
+
+
+# these should not be edited
+name: Zip
+moduleid: bencoding.zip
+guid: e8911ad6-4453-4e77-b8cd-8c6e72f52212
+platform: iphone
+minsdk: 3.0.2.GA
