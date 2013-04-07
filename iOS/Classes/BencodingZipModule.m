@@ -162,11 +162,18 @@ static const int kAutoReleaseInterval = 100;
 	[zip release];
 
     if(callback != nil ){
-        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
+        NSMutableDictionary *event = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                NUMBOOL(success),@"success",
                                statusDetails,@"message",
                                zipFileName,@"zip",
                                nil];
+        
+        //If successful, include the output directory
+        if(success){
+            [event setObject:folderLocation forKey:@"outputDirectory"];
+        }
+        
+        //outputDirectory
         [self _fireEventToListener:@"completed" withObject:event listener:callback thisObject:nil];
         
         [callback autorelease];
